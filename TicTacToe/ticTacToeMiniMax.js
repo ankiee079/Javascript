@@ -11,19 +11,22 @@ var board = [
 const playText = "Play";
 const resetText = "Reset";
 
-// function called on pressing Play/Reset button
-$('.playOrReset').click(function(){
+// function called on pressing Play button
+$('.play').click(function(){
 
     player = 'X';
     opponent = 'O';
-
-    if ($('.playOrReset').text() === playText) {
-        $('.playOrReset').text(resetText);
-    } else {
-        resetGame();
-    }
-    // start the game
+    $('.play').css("visibility","hidden");
+    $('.reset').css("visibility","visible");
     main();
+});
+
+// function called on pressing Reset button
+$('.reset').click(function(){
+
+    player = 'X';
+    opponent = 'O'; 
+    resetGame();
 });
 
 // function called after every move
